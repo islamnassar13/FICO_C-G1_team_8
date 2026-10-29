@@ -1,1 +1,0 @@
-# FICO_C-G1_team_8
