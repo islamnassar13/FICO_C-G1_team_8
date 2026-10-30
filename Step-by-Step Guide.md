@@ -1,3 +1,7 @@
+> [!NOTE]
+> **Source Attribution:** Based on original material by [Obinna Igbokwe](https://github.com/oigbokwe73/SAP-Configuration-File).
+> Fully restructured, rewritten, and significantly enriched with advanced S/4HANA technical workflows and insights by **Islam Nassar** for personal reference and advanced consultancy purposes.
+
 # End-to-End Configuration Of SAP FICO In S/4HANA: Step-by-Step Guide
 
 **SAP FICO (Financial Accounting and Controlling)** in **SAP S/4HANA** forms the core financial backbone of the enterprise, unifying external legal reporting (FI) and internal management accounting (CO) on a single in-memory data architecture. It integrates in real time with **Materials Management (MM)**, **Sales and Distribution (SD)**, and **Production Planning (PP)**.
