@@ -2,10 +2,26 @@
 
 # 🏛️ SAP FICO in S/4HANA: Complete Guide for Beginners & Consultants
 
-[![SAP S/4HANA](https://img.shields.io/badge/SAP-S%2F4HANA%20Finance-008FD3?style=for-the-badge&logo=sap&logoColor=white)](https://www.sap.com/)
-[![Module](https://img.shields.io/badge/Module-FI%20%26%20CO%20(FICO)-blue?style=for-the-badge)](https://kumarconsultings.com/sap-fico-in-s-4hana)
-[![Architecture](https://img.shields.io/badge/Core%20Table-ACDOCA%20(Universal%20Journal)-success?style=for-the-badge)]()
-[![Level](https://img.shields.io/badge/Level-Beginner%20to%20Consultant-orange?style=for-the-badge)]()
+<div align="center">
+
+[📘 Introduction](#-introduction) • 
+[💡 What is FICO?](#-what-is-sap-fico) • 
+[⚙️ S/4HANA Finance](#-what-is-sap-s4hana-finance) • 
+[🧩 Modules & Components](#-sap-fico-modules-and-components)
+
+[📊 Controlling (CO)](#-what-is-sap-co) • 
+[🔗 FI/CO Integration](#-sap-fi-and-co-integration-in-s4hana) • 
+[🗄️ Universal Journal](#-what-is-the-universal-journal-in-sap-s4hana) • 
+[🔄 ECC vs S/4HANA](#-sap-ecc-vs-sap-s4hana-finance-comparison)
+
+[⚡ T-Codes & Fiori](#-important-sap-fico-transaction-codes) • 
+[🎯 Required Skills](#-what-skills-are-required-to-become-an-sap-fico-consultant) • 
+[🗺️ Learning Roadmap](#-how-to-learn-sap-fico-step-by-step) • 
+[❓ FAQ & Profile](#-frequently-asked-questions-about-sap-fico)
+
+</div>
+
+---
 
 **Title:** SAP FICO in S/4HANA: Complete Guide for Beginners | Kumar Consulting  
 **URL Source:** [https://kumarconsultings.com/sap-fico-in-s-4hana](https://kumarconsultings.com/sap-fico-in-s-4hana)
