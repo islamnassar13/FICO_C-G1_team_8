@@ -1,6 +1,7 @@
+<div align="center">
 
 # 🏛️ SAP FICO in S/4HANA: Complete Guide for Beginners & Consultants
-<div align="center">
+   
 [📘 Introduction](#-introduction) • 
 [💡 What is FICO?](#-what-is-sap-fico) • 
 [⚙️ S/4HANA Finance](#-what-is-sap-s4hana-finance) • 
