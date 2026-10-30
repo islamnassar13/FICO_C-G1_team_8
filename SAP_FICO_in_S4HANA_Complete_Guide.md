@@ -1,7 +1,6 @@
-<div align="center">
 
 # 🏛️ SAP FICO in S/4HANA: Complete Guide for Beginners & Consultants
-
+<div align="center">
 [📘 Introduction](#-introduction) • 
 [💡 What is FICO?](#-what-is-sap-fico) • 
 [⚙️ S/4HANA Finance](#-what-is-sap-s4hana-finance) • 
@@ -17,14 +16,10 @@
 [🗺️ Learning Roadmap](#-how-to-learn-sap-fico-step-by-step) • 
 [❓ FAQ & Profile](#-frequently-asked-questions-about-sap-fico)
 
-> [!NOTE]
-> **Source Attribution:** Based on original material by [Kumar Consulting](https://kumarconsultings.com/sap-fico-in-s-4hana). Fully restructured, rewritten, and significantly enriched with advanced S/4HANA technical workflows and insights by **Islam Nassar**.
-
 </div>
 
 > [!NOTE]
 > **Source Attribution:** Based on original material by [Kumar Consulting](https://kumarconsultings.com/sap-fico-in-s-4hana). Fully restructured, rewritten, and significantly enriched with advanced S/4HANA technical workflows and insights by **Islam Nassar**.
-
 
 ---
 
