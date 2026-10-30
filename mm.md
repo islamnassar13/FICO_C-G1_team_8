@@ -6,5 +6,3 @@
 **Title:** SAP FICO in S/4HANA: Complete Guide for Beginners | Author: Kumar Consulting  
 **URL Source:** [https://kumarconsultings.com/sap-fico-in-s-4hana](https://kumarconsultings.com/sap-fico-in-s-4hana)
 
-> [!NOTE]
-> **Source Attribution:** Based on original material by [Kumar Consulting](https://kumarconsultings.com/sap-fico-in-s-4hana). Fully restructured, rewritten, and significantly enriched with advanced S/4HANA technical workflows and insights by **Islam Nassar**.
