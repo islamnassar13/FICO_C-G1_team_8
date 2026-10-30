@@ -1,85 +1,86 @@
 # الدليل المرجعي الشامل لمفهوم القطاعات (Segments) في SAP General Ledger و S/4HANA
 
-## دليل التمييز اللوني في هذا المستند (Color-Coding Legend)
+## دليل التمييز اللوني المعتمد في GitHub (Color-Coding Legend)
 
-لضمان التمييز البصري الواضح في جميع بيئات عرض Markdown (سواء داخل مستودعات **GitHub** عبر صناديق التنبيه الملونة والشارات، أو في عارضات Markdown التي تدعم وسوم HTML الملونة)، تم اعتماد النظام اللوني المزدوج التالي طوال المستند:
+تم تصميم هذا المستند باستخدام **صناديق التنبيه اللونية الأصلية في GitHub (GitHub Native Colored Alerts)** بدون أي أكواد HTML خارجية، ليظهر التمييز اللوني بشكل نظيف واحترافي:
 
-| نوع المحتوى | المؤشر البصري | تنسيق GitHub Alert | اللون المعتمد (HTML / CSS) | الوصف |
+| نوع المحتوى | المؤشر البصري | تنسيق GitHub الرسمي | اللون الظاهر في GitHub | الوصف |
 | :--- | :--- | :--- | :--- | :--- |
-| **كلام الكاتب الأصلي (Paul Ovigele)** | 🟦 **[النص الأصلي - المؤلف]** | `> [!NOTE]` (الإطار الأزرق) | &lt;span style=&quot;color: #0969da; font-weight: bold;&quot;&gt;الأزرق الملكي (#0969da)&lt;/span&gt; | النص الإنجليزي الأصلي كاملاً حرفياً دون حذف أو تعديل أي حرف، متبوعاً بترجمته الدقيقة. |
-| **الإضافات والتحليل المعماري والإثراء** | 🟩 **[إثراء وتحليل معمق]** | `> [!TIP]` (الإطار الأخضر) | &lt;span style=&quot;color: #1a7f37; font-weight: bold;&quot;&gt;الأخضر الزمردي (#1a7f37)&lt;/span&gt; | الشرح التفصيلي، منطق SAP، منطق البيزنس، المعايير المحاسبية، والأثر على جميع الموديولات. |
+| **كلام الكاتب الأصلي (Paul Ovigele)** | 🟦 **[النص الأصلي - المؤلف]** | `> [!NOTE]` | **الأزرق (Blue `Note` Box)** | النص الإنجليزي الأصلي كاملاً حرفياً دون حذف أو تعديل أي حرف، متبوعاً بترجمته الدقيقة. |
+| **الإضافات والتحليل المعماري والإثراء** | 🟩 **[إثراء وتحليل معمق]** | `> [!TIP]` | **الأخضر (Green `Tip` Box)** | الشرح التفصيلي، منطق SAP، منطق البيزنس، المعايير المحاسبية، والأثر على جميع الموديولات. |
+| **الخلاصات والضوابط الاستشارية الحرجة** | 🟪 **[قاعدة استشارية هامة]** | `> [!IMPORTANT]` | **البنفسجي (Purple `Important` Box)** | القواعد الذهبية، التحذيرات التنفيذية، ومصفوفة اتخاذ القرار للمشاريع. |
 
 ## القسم الأول: النص الأصلي الكامل للمؤلف (حرفياً دون انتقاص حرف واحد)
 
 > [!NOTE]
 > 🟦 **[النص الأصلي الكامل كما كتبه Paul Ovigele حرفياً دون تعديل أو نقصان]**
+>
+> The Purpose of Segments in SAP General Ledger
+> Posted by Paul Ovigele
+>
+> STANDARD OF LVING
+>
+> Even if you have read the SAP Help notes, attended conferences and Webinars, talked to experts and
+> searched Google every now and then, I wouldn't be surprised if you still were not clear on the exact
+> purpose of Segments.
+>
+> Let me try to provide some clarity on this topic. Note that I am not speaking on behalf of SAP or anyone
+> else, just on my experience with several clients and the putting together of information that I have
+> garnered from the various sources mentioned above.
+>
+> First of all let us look at the definition of Segment by SAP:
+>
+> "Division of a company for which you can create financial statements for external reporting"
+>
+> This concept was introduced by SAP to satisfy the requirement by the Securities and Exchange
+> Commission (S.E.C.) in the United States and the International Accounting Standards Board (IASB),
+> which stipulates that companies should report financial information by business or geographic area.
+>
+> In SAP, the one guaranteed way of creating full financial statements, is to set up the segment as a
+> company code. However, this would mean that company codes would need to be created for each
+> business segment, some which themselves will span several company codes. This could lead to a rather
+> cumbersome and complex set up of the company code structure.
+>
+> Two existing SAP objects could go some way to facilitating the production of financial statements. They
+> are as follows:
+>
+> (1) Business Areas: This is the division of a company for which you can create financial statements for
+> external reporting. By definition, this seems to satisfy the requirement specified by the SEC and IASB.
+> However, for the past decade, there has been talk in SAP circles, that Business Areas will cease to be
+> supported by SAP in the future (at what point in the future this will happen, is left to be seen);
+>
+> (2) Profit centers: This is an organizational unit in accounting that reflects a management-oriented
+> structure of the organization for the purpose of internal control. Profit Centers have transitioned through the years from being part of the Controlling module (for Profit and Loss Management reporting) to being
+> part of the Enterprise Controlling module (for P&L as well as certain Balance sheet items) to being part of
+> the general ledger (for full financial statement reporting using document splitting).
+>
+> A question that I have been asked several times is, since there are already two objects that can be used
+> to create financial statements (albeit partially), then why did SAP introduce a brand new object (i.e.
+> Segments) to satisfy the segment reporting requirement.
+>
+> The answer that I found is that most SAP customers are using Profit centers and Business areas for other
+> purposes (for example, I have seen clients using profit centers as cost centers, plants, or Sales areas)
+> and therefore it may be difficult to switch these objects to full financial statement reporting entities. This is
+> particularly relevant in cases where companies have hundreds (or even thousands) of Profit
+> Centers/Business Areas. This is why segments have been introduced so that you can have a brand new
+> object which can be used solely for "Segment" reporting.
+>
+> One thing that I caution clients about is that they should not think that Segment reporting can only be
+> satisfied by the use of segments. In fact, if you are carrying out a brand new SAP implementation I
+> recommend that you use profit centers (along with document splitting functionality) for segment reporting.
+> I would leave business areas alone, if you are a new company, since (as mentioned above) the future of
+> this functionality is still uncertain.
 
-&lt;div style=&quot;color: #0969da; background-color: #f0f7ff; padding: 18px; border-left: 5px solid #0969da; border-radius: 6px; font-family: inherit; white-space: pre-wrap;&quot;&gt;The Purpose of Segments in SAP General Ledger
-Posted by Paul Ovigele
-
-STANDARD OF LVING
-
-Even if you have read the SAP Help notes, attended conferences and Webinars, talked to experts and
-searched Google every now and then, I wouldn't be surprised if you still were not clear on the exact
-purpose of Segments.
-
-Let me try to provide some clarity on this topic. Note that I am not speaking on behalf of SAP or anyone
-else, just on my experience with several clients and the putting together of information that I have
-garnered from the various sources mentioned above.
-
-First of all let us look at the definition of Segment by SAP:
-
-"Division of a company for which you can create financial statements for external reporting"
-
-This concept was introduced by SAP to satisfy the requirement by the Securities and Exchange
-Commission (S.E.C.) in the United States and the International Accounting Standards Board (IASB),
-which stipulates that companies should report financial information by business or geographic area.
-
-In SAP, the one guaranteed way of creating full financial statements, is to set up the segment as a
-company code. However, this would mean that company codes would need to be created for each
-business segment, some which themselves will span several company codes. This could lead to a rather
-cumbersome and complex set up of the company code structure.
-
-Two existing SAP objects could go some way to facilitating the production of financial statements. They
-are as follows:
-
-(1) Business Areas: This is the division of a company for which you can create financial statements for
-external reporting. By definition, this seems to satisfy the requirement specified by the SEC and IASB.
-However, for the past decade, there has been talk in SAP circles, that Business Areas will cease to be
-supported by SAP in the future (at what point in the future this will happen, is left to be seen);
-
-(2) Profit centers: This is an organizational unit in accounting that reflects a management-oriented
-structure of the organization for the purpose of internal control. Profit Centers have transitioned through the years from being part of the Controlling module (for Profit and Loss Management reporting) to being
-part of the Enterprise Controlling module (for P&L as well as certain Balance sheet items) to being part of
-the general ledger (for full financial statement reporting using document splitting).
-
-A question that I have been asked several times is, since there are already two objects that can be used
-to create financial statements (albeit partially), then why did SAP introduce a brand new object (i.e.
-Segments) to satisfy the segment reporting requirement.
-
-The answer that I found is that most SAP customers are using Profit centers and Business areas for other
-purposes (for example, I have seen clients using profit centers as cost centers, plants, or Sales areas)
-and therefore it may be difficult to switch these objects to full financial statement reporting entities. This is
-particularly relevant in cases where companies have hundreds (or even thousands) of Profit
-Centers/Business Areas. This is why segments have been introduced so that you can have a brand new
-object which can be used solely for "Segment" reporting.
-
-One thing that I caution clients about is that they should not think that Segment reporting can only be
-satisfied by the use of segments. In fact, if you are carrying out a brand new SAP implementation I
-recommend that you use profit centers (along with document splitting functionality) for segment reporting.
-I would leave business areas alone, if you are a new company, since (as mentioned above) the future of
-this functionality is still uncertain.&lt;/div&gt;
-
-## القسم الثاني: التفكيك التحليلي الفقري (نص المؤلف مقابل الإثراء المعمق)
+## القسم الثاني: التفكيك التحليلي الفقري (نص المؤلف بالأزرق مقابل الإثراء المعمق بالأخضر)
 
 ### 1. إشكالية الغموض حول مفهوم الـ Segment في مجتمع SAP
 
 > [!NOTE]
 > 🟦 **[كلام الكاتب الأصلي - الفقرة 1 و 2]**
-> &lt;div style=&quot;color: #0969da;&quot;&gt;
 >
 > **The Purpose of Segments in SAP General Ledger**
 > **Posted by Paul Ovigele**
+>
 > **STANDARD OF LVING**
 >
 > **Even if you have read the SAP Help notes, attended conferences and Webinars, talked to experts and searched Google every now and then, I wouldn't be surprised if you still were not clear on the exact purpose of Segments.**
@@ -88,24 +89,20 @@ this functionality is still uncertain.&lt;/div&gt;
 >
 > **الترجمة الدقيقة لكلام المؤلف:**
 > حتى لو كنت قد قرأت ملاحظات مساعدة SAP (SAP Help notes)، وحضرت المؤتمرات والندوات عبر الإنترنت، وتحدثت إلى الخبراء وبحثت في Google بين الحين والآخر، فلن أتفاجأ إذا كنت لا تزال غير متأكد من الغرض الدقيق للقطاعات (Segments). دعني أحاول تقديم بعض الوضوح حول هذا الموضوع، علماً بأنني لا أتحدث نيابةً عن SAP أو أي جهة أخرى، بل انطلاقاً من خبرتي مع عدة عملاء وتجميعي للمعلومات التي استقيتها من المصادر المختلفة المذكورة أعلاه.
-> &lt;/div&gt;
 
 > [!TIP]
 > 🟩 **[إثراء وتحليل معمق - لماذا يكتنف الغموض مفهوم الـ Segment؟]**
-> &lt;div style=&quot;color: #1a7f37;&quot;&gt;
 >
 > **جذور الالتباس بين المنظور التقني والمنظور المحاسبي:**
 > يرجع الغموض الذي أشار إليه Paul Ovigele إلى تداخل ثلاثة مفاهيم في بيئة SAP تشترك جميعها في القدرة على إصدار قوائم مالية جزئية أو كلية، وهي: **Business Area (`GSBER`)**، و **Profit Center (`PRCTR`)**، و **Segment (`SEGMENT`)**.
 >
 > * **منطق SAP التقني (SAP System Logic):** ظهر كائن الـ `Segment` مع إطلاق **SAP ERP 6.0 (New General Ledger - New G/L)** كحقل أصيل في جدول الأستاذ العام `FAGLFLEXA` و `FAGLFLEXT`، ثم أصبح لاحقاً ركيزة أساسية في جدول القيود الموحد **Universal Journal (`ACDOCA`)** في **SAP S/4HANA**. تقنياً، لا يُشتق الـ Segment بشكل مباشر من فراغ، بل يرتبط عضوياً في البيانات الأساسية (Master Data) بمركز الربحية (**Profit Center Master Record - KE51/KE52**) ليتم وراثته تلقائياً (Derivation) أثناء الترحيل المحاسبي.
 > * **منطق البيزنس (Business Logic):** الشركات المساهمة الكبرى التي تعمل في أنشطة متعددة (مثل مجموعة تعمل في التطوير العقاري، الصناعات الغذائية، والخدمات اللوجستية) لا يُقنع المساهمين أو هيئات سوق المال فيها رؤية ميزانية مجمعة واحدة للشركة؛ بل يحتاج المستثمر لمعرفة: أي قطاع يولّد التدفقات النقدية؟ وأي قطاع يستنزف الأصول؟ وأي قطاع يتحمل الالتزامات الأكبر؟
-> &lt;/div&gt;
 
 ### 2. التعريف الرسمي والمرجعية التنظيمية الدولية (SEC & IASB)
 
 > [!NOTE]
 > 🟦 **[كلام الكاتب الأصلي - الفقرة 3 و 4 و 5]**
-> &lt;div style=&quot;color: #0969da;&quot;&gt;
 >
 > **First of all let us look at the definition of Segment by SAP:**
 >
@@ -115,11 +112,9 @@ this functionality is still uncertain.&lt;/div&gt;
 >
 > **الترجمة الدقيقة لكلام المؤلف:**
 > أولاً دعونا نلقي نظرة على تعريف الـ Segment من قِبل SAP: «قسم من الشركة يمكنك من أجله إنشاء قوائم مالية لأغراض التقارير الخارجية». تم تقديم هذا المفهوم بواسطة SAP لتلبية متطلبات هيئة الأوراق المالية والبورصات (S.E.C.) في الولايات المتحدة ومجلس معايير المحاسبة الدولية (IASB)، والتي تنص على أنه يجب على الشركات الإبلاغ عن المعلومات المالية حسب قطاع الأعمال أو المنطقة الجغرافية.
-> &lt;/div&gt;
 
 > [!TIP]
 > 🟩 **[إثراء وتحليل معمق - الأبعاد المحاسبية والتنظيمية: IFRS 8 و ASC 280]**
-> &lt;div style=&quot;color: #1a7f37;&quot;&gt;
 >
 > **التأصيل المعياري للمتطلبات القانونية التي صُمم الـ Segment لأجلها:**
 >
@@ -136,23 +131,19 @@ this functionality is still uncertain.&lt;/div&gt;
 >    يعني القدرة على استخراج:
 >    * **قائمة المركز المالي المتوازنة (Balanced Balance Sheet):** حيث تتساوى (الأصول = الالتزامات + حقوق الملكية) على مستوى الـ Segment الواحد بفضل خاصية **Document Splitting** وحساب التسوية الصفرية (**Zero-Balance Clearing Account**).
 >    * **قائمة الدخل (Profit & Loss Statement):** إيرادات ومصروفات القطاع.
-> &lt;/div&gt;
 
 ### 3. إشكالية استخدام كود الشركة (Company Code) كقطاع
 
 > [!NOTE]
 > 🟦 **[كلام الكاتب الأصلي - الفقرة 6]**
-> &lt;div style=&quot;color: #0969da;&quot;&gt;
 >
 > **In SAP, the one guaranteed way of creating full financial statements, is to set up the segment as a company code. However, this would mean that company codes would need to be created for each business segment, some which themselves will span several company codes. This could lead to a rather cumbersome and complex set up of the company code structure.**
 >
 > **الترجمة الدقيقة لكلام المؤلف:**
 > في SAP، الطريقة الوحيدة المضمونة تقليدياً لإنشاء قوائم مالية كاملة هي إعداد القطاع ككود شركة (Company Code). ومع ذلك، فإن هذا يعني أنه سيتعين إنشاء أكواد شركات لكل قطاع أعمال، وبعض هذه القطاعات نفسها قد يمتد عبر عدة أكواد شركات، مما قد يؤدي إلى إعداد مرهق ومعقد للغاية لهيكل أكواد الشركات.
-> &lt;/div&gt;
 
 > [!TIP]
 > 🟩 **[إثراء وتحليل معمق - لماذا يفشل Company Code في تمثيل الـ Segment؟]**
-> &lt;div style=&quot;color: #1a7f37;&quot;&gt;
 >
 > **المقارنة المعمارية بين الكيان القانوني والقطاع التشغيلي:**
 >
@@ -162,13 +153,11 @@ this functionality is still uncertain.&lt;/div&gt;
 >     1. تضاعف قيود المعاملات البينية (**Intercompany Transactions - OBYA**) داخل نفس الدولة الواحدة!
 >     2. تعقيد الإقرارات الضريبية (VAT / Withholding Tax) التي تشترطها الدولة على مستوى السجل التجاري الواحد وليس على مستوى خطوط الإنتاج.
 >     3. تضخم البيانات الأساسية للعملاء والموردين (`Customer/Vendor Company Code Views - KNB1/LFB1`) والحسابات البنكية.
-> &lt;/div&gt;
 
 ### 4. البدائل التاريخية في SAP: مناطق الأعمال (Business Areas) ومراكز الربحية (Profit Centers)
 
 > [!NOTE]
 > 🟦 **[كلام الكاتب الأصلي - الفقرة 7 و 8 و 9]**
-> &lt;div style=&quot;color: #0969da;&quot;&gt;
 >
 > **Two existing SAP objects could go some way to facilitating the production of financial statements. They are as follows:**
 >
@@ -180,11 +169,9 @@ this functionality is still uncertain.&lt;/div&gt;
 > هناك كائنان موجودان مسبقاً في SAP يمكنهما المساهمة إلى حد ما في تسهيل إنتاج القوائم المالية، وهما كالتالي:
 > (1) **مناطق الأعمال (Business Areas):** هي قسم من الشركة يمكنك من أجله إنشاء قوائم مالية للتقارير الخارجية. ومن حيث التعريف، يبدو أن هذا يلبي المتطلبات المحددة من قِبل SEC و IASB. ومع ذلك، على مدار العقد الماضي، كان هناك حديث في أوساط SAP بأن مناطق الأعمال سيتوقف دعمها من قِبل SAP في المستقبل (ومتى سيحدث ذلك في المستقبل هو أمر متروك للأيام).
 > (2) **مراكز الربحية (Profit Centers):** هي وحدة تنظيمية في المحاسبة تعكس هيكلاً موجهاً نحو الإدارة للمؤسسة لغرض الرقابة الداخلية. وقد انتقلت مراكز الربحية عبر السنين من كونها جزءاً من موديول التكاليف Controlling (لتقارير إدارة الأرباح والخسائر) إلى كونها جزءاً من موديول الرقابة المؤسسية Enterprise Controlling (للأرباح والخسائر بالإضافة إلى بنود معينة في الميزانية العمومية) وصولاً إلى كونها جزءاً من الأستاذ العام General Ledger (لإعداد تقارير القوائم المالية الكاملة باستخدام تقسيم المستندات Document Splitting).
-> &lt;/div&gt;
 
 > [!TIP]
 > 🟩 **[إثراء وتحليل معمق - التطور التاريخي والمعماري من R/3 إلى S/4HANA]**
-> &lt;div style=&quot;color: #1a7f37;&quot;&gt;
 >
 > **أولاً: لماذا تراجعت مكانة Business Area (`GSBER`)؟**
 > * في عصر **SAP R/3 (Classic G/L)**، كانت `Business Area` هي الأداة الوحيدة في FI لاستخراج ميزانية فرعية عبر أكواد الشركات (بمساعدة التسويات الدورية في آخر الشهر `F.5D` و `F.5E`).
@@ -196,13 +183,11 @@ this functionality is still uncertain.&lt;/div&gt;
 > 2. **المرحلة الثانية (EC-PCA - Enterprise Controlling):** دفتر أستاذ مستقل بذاته (بياناته مخزنة في جداول منفصلة مثل `GLPCA` و `GLPCT`) يسمح بنقل بعض بنود الميزانية (الأصول الثابتة، المخزون، الذمم المدينة والدائنة) عبر برامج ترحيل آخر الشهر (`1KEH`, `1KEI`, `1KEK`)، لكنه كان يسبب **فجوة مطابقة (Reconciliation Gap)** بين FI و EC-PCA.
 > 3. **المرحلة الثالثة (SAP ERP 6.0 - New G/L):** دمج الـ Profit Center والـ Segment مباشرة داخل جداول الأستاذ العام (`FAGLFLEXA`) مع ابتكار محرك **Document Splitting** اللحظي (Real-time)، مما ألغى الحاجة لتسويات نهاية الشهر لتقسيم الميزانية.
 > 4. **المرحلة الرابعة (SAP S/4HANA - Universal Journal `ACDOCA`):** توحيد FI و CO و AA و ML في جدول واحد هو `ACDOCA` (المعروف بـ **Single Source of Truth**)، حيث يتواجد كل من `PRCTR` و `SEGMENT` في كل سطر قيد محاسبي لحظياً.
-> &lt;/div&gt;
 
 ### 5. السؤال الجوهري: لماذا ابتكرت SAP كائن الـ Segment رغم وجود البديلين؟
 
 > [!NOTE]
 > 🟦 **[كلام الكاتب الأصلي - الفقرة 10 و 11]**
-> &lt;div style=&quot;color: #0969da;&quot;&gt;
 >
 > **A question that I have been asked several times is, since there are already two objects that can be used to create financial statements (albeit partially), then why did SAP introduce a brand new object (i.e. Segments) to satisfy the segment reporting requirement.**
 >
@@ -211,11 +196,9 @@ this functionality is still uncertain.&lt;/div&gt;
 > **الترجمة الدقيقة لكلام المؤلف:**
 > السؤال الذي طُرح عليّ عدة مرات هو: بما أنه يوجد بالفعل كائنان يمكن استخدامهما لإنشاء القوائم المالية (وإن كان ذلك جزئياً)، فلماذا قدمت SAP كائناً جديداً تماماً (أي Segments) لتلبية متطلبات التقارير القطاعية؟
 > الإجابة التي وجدتها هي أن معظم عملاء SAP يستخدمون مراكز الربحية ومناطق الأعمال لأغراض أخرى (على سبيل المثال، رأيت عملاء يستخدمون مراكز الربحية كمراكز تكلفة، أو مصانع، أو مناطق مبيعات)، وبالتالي قد يكون من الصعب تحويل هذه الكائنات إلى كيانات لإعداد تقارير القوائم المالية الكاملة. ويكتسب هذا الأمر أهمية خاصة في الحالات التي تمتلك فيها الشركات المئات (أو حتى الآلاف) من مراكز الربحية أو مناطق الأعمال. ولهذا السبب تم تقديم القطاعات (Segments) بحيث يكون لديك كائن جديد تماماً يمكن استخدامه حصرياً لإعداد «التقارير القطاعية».
-> &lt;/div&gt;
 
 > [!TIP]
 > 🟩 **[إثراء وتحليل معمق - معضلة التفتيت الرقابي (Granularity Dilemma) وعلاقة M:1]**
-> &lt;div style=&quot;color: #1a7f37;&quot;&gt;
 >
 > **التشريح العملي لما ذكره Paul Ovigele حول مئات أو آلاف مراكز الربحية:**
 >
@@ -227,23 +210,19 @@ this functionality is still uncertain.&lt;/div&gt;
 >      في SAP، كل **Profit Center** يحتوي في بياناته الأساسية (`KE51` - تبويب Basic Data) على حقل واحد اسمه **Segment**. وبذلك يمكن ربط **300 Profit Center** بـ **Segment واحد**!
 >      * **للتقارير الإدارية الداخلية (CO/Management):** تحلل الأداء تفصيلياً على مستوى الـ 300 Profit Center.
 >      * **للتقارير المالية القانونية الخارجية (External IFRS 8 / SEC Reporting):** تجمع القوائم المالية المتوازنة تلقائياً على مستوى الـ 5 Segments فقط!
-> &lt;/div&gt;
 
 ### 6. نصيحة المؤلف الاستشارية للمشاريع الجديدة (Greenfield Implementations)
 
 > [!NOTE]
 > 🟦 **[كلام الكاتب الأصلي - الفقرة 12 (الأخيرة)]**
-> &lt;div style=&quot;color: #0969da;&quot;&gt;
 >
 > **One thing that I caution clients about is that they should not think that Segment reporting can only be satisfied by the use of segments. In fact, if you are carrying out a brand new SAP implementation I recommend that you use profit centers (along with document splitting functionality) for segment reporting. I would leave business areas alone, if you are a new company, since (as mentioned above) the future of this functionality is still uncertain.**
 >
 > **الترجمة الدقيقة لكلام المؤلف:**
 > هناك أمر واحد أحذر العملاء بشأنه، وهو ألا يعتقدوا أن التقارير القطاعية لا يمكن تلبيتها إلا باستخدام كائن القطاعات (Segments). في الواقع، إذا كنت تنفذ تطبيقاً جديداً تماماً لنظام SAP (Brand New Implementation)، فإنني أوصي باستخدام مراكز الربحية (Profit Centers) — جنباً إلى جنب مع خاصية تقسيم المستندات (Document Splitting) — لإعداد التقارير القطاعية. وأنصح بترك مناطق الأعمال (Business Areas) جانباً إذا كنت شركة جديدة، نظراً لأن مستقبل هذه الوظيفة (كما ذُكر أعلاه) لا يزال غير مؤكد.
-> &lt;/div&gt;
 
 > [!TIP]
 > 🟩 **[إثراء وتحليل معمق - متى نكتفي بـ Profit Center ومتى نجمع بين Profit Center و Segment؟]**
-> &lt;div style=&quot;color: #1a7f37;&quot;&gt;
 >
 > **تقييم توصية المؤلف في ضوء معمارية SAP S/4HANA الحديثة:**
 >
@@ -252,15 +231,12 @@ this functionality is still uncertain.&lt;/div&gt;
 >   إذا كانت الشركة في مشروع جديد (**Greenfield Implementation**) تصمم هيكلها بحيث يكون لديها مثلاً 6 مراكز ربحية تمثل هي نفسها القطاعات الستة الخارجية، أو تستخدم **Profit Center Hierarchy (`KCH1`)** لتجميع مراكز الربحية، فيمكنها الاعتماد على `Profit Center` مباشرة مع `Document Splitting`.
 > * **السيناريو الثاني (التصميم القياسي الموصى به في S/4HANA Best Practices):**
 >   حتى في المشاريع الجديدة، تنصح **SAP Best Practices** بتفعيل كلٍّ من `Profit Center` و `Segment` معاً كخصائص تقسيم (**Splitting Characteristics**) في شاشة الإعدادات، لأن تفعيل `Segment` منذ اليوم الأول في `KE51` لا يكلّف أي جهد إضافي من المستخدم النهائي (لأنه يُشتق أوتوماتيكياً من الـ Profit Center بنسبة 100%)، وفي الوقت نفسه يمنح الشركة **مرونة مستقبلية كاملة** إذا توسعت مراكز الربحية لاحقاً إلى مئات المراكز دون المساس بثبات القطاعات الخارجية.
-> &lt;/div&gt;
 
 ## القسم الثالث: مصفوفة المقارنة الشاملة بين الكائنات التنظيمية الأربعة في SAP
 
 > [!TIP]
 > 🟩 **[إثراء وتحليل معمق - مقارنة معمارية وتنظيمية شاملة]**
-> &lt;div style=&quot;color: #1a7f37;&quot;&gt;
 > توضح المصفوفة التالية الفروقات الجوهرية بين الكائنات الأربعة التي ناقشها المؤلف من حيث الغرض، الجداول التقنية، والاشتقاق:
-> &lt;/div&gt;
 
 | وجه المقارنة | Company Code (`BUKRS`) | Business Area (`GSBER`) | Profit Center (`PRCTR`) | Segment (`SEGMENT`) |
 | :--- | :--- | :--- | :--- | :--- |
@@ -275,9 +251,8 @@ this functionality is still uncertain.&lt;/div&gt;
 
 > [!TIP]
 > 🟩 **[إثراء وتحليل معمق - كيف يعمل الـ Segment تقنياً داخل النظام؟]**
-> &lt;div style=&quot;color: #1a7f37;&quot;&gt;
 >
-> ### 1. سلسلة الاشتقاق التلقائي (The Golden Derivation Chain)
+> **1. سلسلة الاشتقاق التلقائي (The Golden Derivation Chain):**
 > في نظام SAP، **لا يقوم المحاسب أو مدخل الفاتورة باختيار الـ Segment يدوياً** في الحالات القياسية؛ بل يعمل النظام وفق سلسلة وراثة محكمة:
 >
 > * **المواد والأصناف (Materials):** `Material Master (MM01/MM02)` في المصنع (`Plant`) يحتوي على `Profit Center` ⬅️ يشتق منه الـ `Segment`.
@@ -285,20 +260,17 @@ this functionality is still uncertain.&lt;/div&gt;
 > * **المشاريع والأوامر الداخلية (WBS & Internal Orders):** `WBS Element (CJ20N)` أو `Internal Order (KO01)` يحتوي على `Profit Center` ⬅️ يشتق منه الـ `Segment`.
 > * **أوامر المبيعات (Sales Orders):** `Sales Order Item (VA01)` يرث الـ `Profit Center` من الصنف/المصنع ⬅️ يشتق منه الـ `Segment`.
 >
-> **قاعدة ذهبية في SAP:** بمجرد إدخال الـ `Segment` داخل شاشة تعريف الـ `Profit Center` (`KE51`) وحفظه وترحيل قيود عليه، يصبح حقل الـ Segment في الـ Profit Center **غير قابل للتعديل المباشر** إلا عبر إجراءات إعادة التنظيم الرسمية (**Segment Reorganization / Profit Center Reorganization**) لضمان عدم تشوه أرصدة الميزانية التاريخية!
->
-> ### 2. محرك تقسيم المستندات (Document Splitting Engine) والتسوية الصفرية
+> **2. محرك تقسيم المستندات (Document Splitting Engine) والتسوية الصفرية:**
 > المشكلة الكبرى في المحاسبة المالية التقليدية هي أن **المصروفات والإيرادات** تعرف مركز ربحيتها وقطاعها، بينما **بنود الميزانية العمومية** (مثل الموردين `Vendor Recon Account`، العملاء `Customer Recon Account`، البنوك `Bank Account`، وضريبة القيمة المضافة `VAT`) يتم ترحيلها بإجمالي الفاتورة بدون قطاع!
 >
 > هنا يتدخل **Document Splitting** عبر ثلاث مراحل متتالية:
->
-> 1. **التقسيم الساكن (Passive Splitting):**
->    يعمل عند **السداد أو التحصيل** (`F-53`, `F-28`, `F110`). ينظر النظام إلى الفاتورة الأصلية التي يتم سدادها، ويورث نسب الـ `Segment` والـ `Profit Center` منها إلى قيد البنك والخصم النقدي بنفس النسب تماماً.
-> 2. **التقسيم النشط القائم على القواعد (Active / Rule-Based Splitting):**
->    يعمل عند **إثبات الفاتورة** (`FB60`, `MIRO`, `FB70`, `VF01`). ينظر النظام إلى بنود المصروفات أو الإيرادات (`Item Categories 20000 / 30000`) ويقوم بتقسيم بند المورد أو العميل والضرائب (`Item Categories 03000 / 02000 / 05100`) بنفس النسب المالية.
-> 3. **التوازن الصفري (Zero-Balance Clearing Line Items):**
->    عندما يتم إجراء تحويل مالي أو تسوية بين قطاعين مختلفين (مثلاً نقل أصل أو مصروف مشترك بين `SEG_A` و `SEG_B`)، يقوم النظام تلقائياً بتوليد أسطر تسوية على حساب وسيط (**Zero-Balance Clearing Account**) بحيث يخرج كل Segment وميزانيته متوازنة (`Debit = Credit = 0`) في نفس اللحظة!
-> &lt;/div&gt;
+> 1. **التقسيم الساكن (Passive Splitting):** يعمل عند **السداد أو التحصيل** (`F-53`, `F-28`, `F110`). ينظر النظام إلى الفاتورة الأصلية التي يتم سدادها، ويورث نسب الـ `Segment` والـ `Profit Center` منها إلى قيد البنك والخصم النقدي بنفس النسب تماماً.
+> 2. **التقسيم النشط القائم على القواعد (Active / Rule-Based Splitting):** يعمل عند **إثبات الفاتورة** (`FB60`, `MIRO`, `FB70`, `VF01`). ينظر النظام إلى بنود المصروفات أو الإيرادات (`Item Categories 20000 / 30000`) ويقوم بتقسيم بند المورد أو العميل والضرائب (`Item Categories 03000 / 02000 / 05100`) بنفس النسب المالية.
+> 3. **التوازن الصفري (Zero-Balance Clearing Line Items):** عندما يتم إجراء تحويل مالي أو تسوية بين قطاعين مختلفين (مثلاً نقل أصل أو مصروف مشترك بين `SEG_A` و `SEG_B`)، يقوم النظام تلقائياً بتوليد أسطر تسوية على حساب وسيط (**Zero-Balance Clearing Account**) بحيث يخرج كل Segment وميزانيته متوازنة (`Debit = Credit = 0`) في نفس اللحظة!
+
+> [!IMPORTANT]
+> 🟪 **[قاعدة ذهبية في SAP حول تعديل الـ Segment]**
+> بمجرد إدخال الـ `Segment` داخل شاشة تعريف الـ `Profit Center` (`KE51`) وحفظه وترحيل قيود عليه، يصبح حقل الـ Segment في الـ Profit Center **غير قابل للتعديل المباشر** إلا عبر إجراءات إعادة التنظيم الرسمية (**Segment Reorganization / Profit Center Reorganization**) لضمان عدم تشوه أرصدة الميزانية التاريخية!
 
 ### مثال رقمي تطبيقي لقيد مقسم عبر محرك Document Splitting
 
@@ -320,9 +292,7 @@ this functionality is still uncertain.&lt;/div&gt;
 
 > [!TIP]
 > 🟩 **[إثراء وتحليل معمق - كيف يتأثر كل موديول في SAP بتفعيل الـ Segments؟]**
-> &lt;div style=&quot;color: #1a7f37;&quot;&gt;
-> تفعيل الـ `Segment` وتحديده كحقل إجباري ومتوازن (`Required &amp; Zero-Balance Field`) في الأستاذ العام لا يقتصر أثره على موديول FI، بل يمتد عبر كافة العمليات اللوجستية والرأسمالية والبشرية في النظام:
-> &lt;/div&gt;
+> تفعيل الـ `Segment` وتحديده كحقل إجباري ومتوازن (`Required & Zero-Balance Field`) في الأستاذ العام لا يقتصر أثره على موديول FI، بل يمتد عبر كافة العمليات اللوجستية والرأسمالية والبشرية في النظام:
 
 | الموديول (SAP Module) | نقطة التكامل الأساسية | كيف ينتقل الـ Segment؟ | التحديات والضوابط التشغيلية (Key Controls & Challenges) |
 | :--- | :--- | :--- | :--- |
@@ -339,9 +309,7 @@ this functionality is still uncertain.&lt;/div&gt;
 
 > [!TIP]
 > 🟩 **[إثراء وتحليل معمق - الدليل التطبيقي للاستشاريين (IMG Paths & Transactions)]**
-> &lt;div style=&quot;color: #1a7f37;&quot;&gt;
 > لتنفيذ منظومة التقارير القطاعية (Segment Reporting) بشكل سليم في SAP ECC (New G/L) أو SAP S/4HANA، يمر الاستشاري بالخطوات الهندسية التالية بالترتيب:
-> &lt;/div&gt;
 
 | الخطوة | اسم الإعداد التقني | مسار SPRO / الكود المختصر (T-Code) | الجدول التقني | الغرض والضوابط الاستشارية |
 | :--- | :--- | :--- | :--- | :--- |
@@ -357,16 +325,15 @@ this functionality is still uncertain.&lt;/div&gt;
 
 ## القسم السابع: الأخطاء الشائعة وأفضل الممارسات الاستشارية (Best Practices & Pitfalls)
 
-> [!TIP]
-> 🟩 **[إثراء وتحليل معمق - خلاصة الخبرات العملية في مشاريع SAP]**
-> &lt;div style=&quot;color: #1a7f37;&quot;&gt;
+> [!IMPORTANT]
+> 🟪 **[إثراء وتحليل معمق - خلاصة الخبرات العملية وأشهر الأخطاء في مشاريع SAP]**
 >
-> ### 1. أشهر الأخطاء القاتلة التي يقع فيها العملاء (Common Pitfalls)
+> **1. أشهر الأخطاء القاتلة التي يقع فيها العملاء (Common Pitfalls):**
 > * **الخطأ الأول (العلاقة 1:1 غير المبررة):** إنشاء Segment منفصل لكل Profit Center (مثلاً 500 Profit Center مقابل 500 Segment). هذا يلغي تماماً الفائدة المعمارية للـ Segment التي شرحها Paul Ovigele ويزيد تعقيد التقارير الخارجية بلا داعٍ.
 > * **الخطأ الثاني (استخدام Dummy Segment كحل دائم):** إنشاء قطاع وهمي (`DUMMY_SEG`) وتفعيله كـ Default Constant في Document Splitting للتخلص من رسائل الخطأ أثناء الترحيل! هذا يؤدي إلى تراكم أرصدة ضخمة غير مصنفة في قطاع وهمي يفقد القوائم المالية مصداقيتها أمام المراجع الخارجي.
 > * **الخطأ الثالث (إغفال الحسابات الوسيطة والبنكية):** نسيان تصنيف حسابات التسوية البنكية (`Bank Sub-accounts`) أو حسابات `GR/IR` في شاشة `GSP_LZ2`، مما يعطل الدورة المستندية للسداد أو الفوترة.
 >
-> ### 2. مصفوفة اتخاذ القرار النهائي للمشاريع (Decision Matrix)
+> **2. مصفوفة اتخاذ القرار النهائي للمشاريع (Decision Matrix):**
 > * **إذا كان المشروع Greenfield (تطبيق جديد بالكامل على S/4HANA):**
 >   * **تجاهل تماماً `Business Area`** (لا تقم بتفعيلها).
 >   * **صمّم هيكل `Profit Centers`** ليعكس وحدات المساءلة الإدارية الداخلية (المصانع، الفروع، خطوط المنتجات).
@@ -374,4 +341,3 @@ this functionality is still uncertain.&lt;/div&gt;
 >   * **فعّل `Document Splitting` مع `Zero-Balance`** لكلا الحقلين (`PRCTR` و `SEGMENT`).
 > * **إذا كان المشروع Brownfield (تحويل نظام قائم يستخدم Profit Centers بكثافة لأغراض أخرى):**
 >   * هنا تتجلى العبقرية التي ذكرها Paul Ovigele؛ إذ يمكنك الإبقاء على آلاف مراكز الربحية القائمة كما هي دون هدم هيكل التقارير الداخلية، وبناء طبقة نظيفة من الـ **Segments** فوقها لتلبية متطلبات المراجع الخارجي وهيئات سوق المال.
-> &lt;/div&gt;
