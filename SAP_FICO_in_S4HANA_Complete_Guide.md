@@ -26,33 +26,32 @@
 ---
 
 ## 📑 Table of Contents
-1. [Introduction](#-introduction)
-2. [What is SAP FICO?](#-what-is-sap-fico)
-3. [What is SAP S/4HANA Finance?](#-what-is-sap-s4hana-finance)
-4. [SAP FICO Modules and Components](#-sap-fico-modules-and-components)
-   - [1. General Ledger Accounting – SAP FI-GL](#1-general-ledger-accounting--sap-fi-gl)
-   - [2. Accounts Payable – SAP FI-AP](#2-accounts-payable--sap-fi-ap)
-   - [3. Accounts Receivable – SAP FI-AR](#3-accounts-receivable--sap-fi-ar)
-   - [4. Asset Accounting – SAP FI-AA](#4-asset-accounting--sap-fi-aa)
-   - [5. Bank Accounting – SAP FI-BL](#5-bank-accounting)
-5. [What is SAP CO (Controlling)?](#-what-is-sap-co)
-6. [SAP FI and CO Integration in S/4HANA](#-sap-fi-and-co-integration-in-s4hana)
-7. [What is the Universal Journal in SAP S/4HANA?](#-what-is-the-universal-journal-in-sap-s4hana)
-   - [ACDOCA vs BSEG](#acdoca-vs-bseg)
-8. [SAP FICO Integration With Other Modules](#-sap-fico-integration-with-other-modules)
-   - [SAP FICO and MM Integration (P2P)](#sap-fico-and-mm-integration)
-   - [SAP FICO and SD Integration (O2C)](#sap-fico-and-sd-integration)
-   - [SAP FICO and Asset Accounting](#sap-fico-and-asset-accounting)
-   - [SAP FICO and Controlling](#sap-fico-and-controlling)
-9. [SAP ECC vs. SAP S/4HANA Finance Comparison](#-sap-ecc-vs-sap-s4hana-finance-comparison)
-10. [Important SAP FICO Transaction Codes & Fiori Apps](#-important-sap-fico-transaction-codes)
-11. [What Skills Are Required to Become an SAP FICO Consultant?](#-what-skills-are-required-to-become-an-sap-fico-consultant)
-12. [SAP FICO Interview Preparation](#-sap-fico-interview-preparation)
-13. [Is SAP FICO a Good Career Option?](#-is-sap-fico-a-good-career-option)
-14. [Who Should Learn SAP FICO?](#-who-should-learn-sap-fico)
-15. [How to Learn SAP FICO Step by Step (9-Step Roadmap)](#-how-to-learn-sap-fico-step-by-step)
-16. [Frequently Asked Questions (FAQ)](#-frequently-asked-questions-about-sap-fico)
-17. [Final Thoughts & Author Profile](#-final-thoughts)
+### 🚀 1. Foundations & Overview
+* [Introduction](#-introduction)
+* [What is SAP FICO?](#-what-is-sap-fico)
+* [What is SAP S/4HANA Finance?](#-what-is-sap-s4hana-finance)
+
+### 🧩 2. Modules & Core Components
+* [SAP FICO Modules and Components](#-sap-fico-modules-and-components)
+  * [1. General Ledger Accounting (FI-GL)](#1-general-ledger-accounting--sap-fi-gl)
+  * [2. Accounts Payable (FI-AP)](#2-accounts-payable--sap-fi-ap)
+  * [3. Accounts Receivable (FI-AR)](#3-accounts-receivable--sap-fi-ar)
+  * [4. Asset Accounting (FI-AA)](#4-asset-accounting--sap-fi-aa)
+  * [5. Bank Accounting](#5-bank-accounting)
+* [What is SAP CO (Controlling)?](#-what-is-sap-co)
+
+### 🔗 3. S/4HANA Architecture & Integration
+* [SAP FI and CO Integration in S/4HANA](#-sap-fi-and-co-integration-in-s4hana)
+* [Universal Journal (ACDOCA vs BSEG)](#-what-is-the-universal-journal-in-sap-s4hana)
+* [SAP FICO Integration With Other Modules (MM, SD, AA)](#-sap-fico-integration-with-other-modules)
+* [SAP ECC vs. S/4HANA Comparison](#-sap-ecc-vs-sap-s4hana-finance-comparison)
+
+### 💼 4. Career, T-Codes & Roadmap
+* [Important Transaction Codes & Fiori Apps](#-important-sap-fico-transaction-codes)
+* [Required Skills for Consultants](#-what-skills-are-required-to-become-an-sap-fico-consultant)
+* [Interview Preparation & Career Value](#-sap-fico-interview-preparation)
+* [9-Step Learning Roadmap](#-how-to-learn-sap-fico-step-by-step)
+* [FAQ & Final Thoughts](#-frequently-asked-questions-about-sap-fico)
 
 ---
 
