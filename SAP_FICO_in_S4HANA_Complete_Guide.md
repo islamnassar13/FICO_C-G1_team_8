@@ -710,24 +710,3 @@ For experienced SAP ECC professionals, learning **SAP S/4HANA Finance, Universal
 
 With strong accounting fundamentals, structured SAP training, and sufficient hands-on practice, you can build a solid foundation for a career as an **SAP FICO / SAP S/4HANA Finance consultant**.
 
-**Looking to learn SAP FICO S/4HANA with practical training? Explore our SAP FICO training resources and start building your SAP Finance skills step by step.**
-
----
-
-<div align="center">
-
-### 👨‍🏫 Author & Trainer Profile
-
-![Image 1](https://kumarconsultings.com/images/settings/1777623576_favicon.png)
-
-**Kumar Sir (Kundan Kumar)**  
-*SAP Certified Consultant · 18+ Years Experience*
-
-Has worked on 15+ successful domestic and international projects. Trained thousands of students worldwide in SAP, many of whom are now working at leading multinational companies (MNCs).
-
-### 🚀 Start Your SAP Career Today!
-Free classes are available — explore first, then invest. No risk, just pure learning.
-
-[![Contact Kumar Sir](https://img.shields.io/badge/Contact%20Kumar%20Sir%20%E2%86%92-008FD3?style=for-the-badge&logo=sap&logoColor=white)](https://kumarconsultings.com/contact)
-
-</div>
