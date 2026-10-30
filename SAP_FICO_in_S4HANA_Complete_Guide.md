@@ -1,6 +1,6 @@
 > [!NOTE]
 > **Source Attribution:** Based on original material by [Kumar Consulting](https://kumarconsultings.com/sap-fico-in-s-4hana).
-> Fully restructured, rewritten, and significantly enriched with advanced S/4HANA technical workflows and insights by **Islam Nassar**.
+> Fully restructured, rewritten, and significantly enriched with advanced S/4HANA technical workflows and insights by **Islam Nassar** for personal reference and advanced consultancy purposes.
 
 <div align="center">
 
